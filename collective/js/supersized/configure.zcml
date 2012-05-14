@@ -9,11 +9,11 @@
 
   <browser:resource
     name="supersized.min.js"
-    file="resources/js/supersized.js"
+    file="resources/js/supersized.min.js"
     />
  
   <browser:resourceDirectory
-    name="supersized.min.js"
+    name="supersized"
     directory="resources"
     />
 

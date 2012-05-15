@@ -6,4 +6,11 @@
     cacheable="True" compression="safe" cookable="False"
     enabled="True" expression=""  inline="False" conditionalcomment=""/>
 
+ <javascript 
+    id="++resource++supersized.shutter.min.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False" conditionalcomment=""/>
+
+
+
 </object>

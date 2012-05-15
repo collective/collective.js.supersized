@@ -9,14 +9,16 @@
 
 <head>
 
-<link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="theme/supersized.shutter.css" type="text/css" media="screen" />
-		<script type="text/javascript" src="js/supersized.min.js"></script>
-		<script type="text/javascript" src="theme/supersized.shutter.min.js"></script>
+		<link rel="stylesheet" href="++resource++supersized.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="++resource++supersized.shutter.css" type="text/css" media="screen" />
+		
+		<script type="text/javascript" src="++resource++supersized.min.js"></script>
+		<script type="text/javascript" src="++resource++supersized.shutter.min.js"></script>
+		
 		
 		<script type="text/javascript">
 			
-			jQuery(function($){
+			$(document).ready(function() {
 				
 				$.supersized({
 				

@@ -12,6 +12,21 @@
     file="resources/js/supersized.min.js"
     />
  
+  <browser:resource
+    name="supersized.shutter.min.js"
+    file="resources/theme/supersized.shutter.min.js"
+    />
+
+  <browser:resource
+    name="supersized.css"
+    file="resources/css/supersized.css"
+    />
+
+  <browser:resource
+    name="supersized.shutter.css"
+    file="resources/theme/supersized.shutter.css"
+    />
+
   <browser:resourceDirectory
     name="supersized"
     directory="resources"

@@ -60,10 +60,4 @@ $(document).ready(function(){
 
     def css(self):
         return u"""
-<link rel="stylesheet" type="text/css"
-    href="++resourse++supersized.css" />
-<link rel="stylesheet" type="text/css"
-    href="++resourse++supersized.shutter.css" />
-<style>
-</style>
 """ 

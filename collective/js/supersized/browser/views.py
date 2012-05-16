@@ -44,7 +44,7 @@ $(document).ready(function(){
         slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
         thumb_links				:	1,			// Individual thumb links for each slide
         thumbnail_navigation    :   0,			// Thumbnail navigation
-        slides 					:  	[{image : '/image'},
+        slides 					:  	[{image : '%(image)s/image'},
                                     ],
                                     
         // Theme Options			   
@@ -54,9 +54,7 @@ $(document).ready(function(){
 });
 </script>
 """ % {
-         'image' : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/kazvan-1.jpg', 
-         'title' : 'Tittelen',
-         'thumb': 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/kazvan-1.jpg'
+         'image' : self.context.absolute_url(),  
     }
 
 

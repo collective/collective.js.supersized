@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.js.supersized">
+" />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <browser:page 
+    name="supersized_view"
+    for="*"
+    permission="zope2.View"
+    template="supersized.pt"
+    class=".views.SupersizedView" />
+
+
+</configure>
+
+     

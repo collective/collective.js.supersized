@@ -2,7 +2,12 @@ Changelog
 =========
 
 
-0.1dev (2012-02-23)
+0.1.1dev (2012-05-17)
+------------------
+
+- Removed unneeded stuff in js.
+
+0.1dev (2012-05-15)
 ------------------
 
 - Initial release

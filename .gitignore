@@ -2,3 +2,4 @@
 *egg.info
 *egg-info*
 .DS_Store
+/dist

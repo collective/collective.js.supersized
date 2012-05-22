@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.2 (2012-05-22)
+------------------
+
+- Fixed registration of image dire
+- Changes to css to use images
+- Registered the full js files as browser resources 
+- Small change in the profiles
 
 0.1.1dev (2012-05-17)
 ------------------

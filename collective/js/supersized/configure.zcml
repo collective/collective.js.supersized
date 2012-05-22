@@ -22,6 +22,16 @@
     />
 
   <browser:resource
+    name="supersized.js"
+    file="resources/js/supersized.js"
+    />
+ 
+  <browser:resource
+    name="supersized.shutter.js"
+    file="resources/theme/supersized.shutter.js"
+    />
+
+  <browser:resource
     name="supersized.css"
     file="resources/css/supersized.css"
     />
@@ -33,7 +43,7 @@
 
   <browser:resourceDirectory
     name="supersized"
-    directory="resources"
+    directory="resources/img"
     />
 
   <genericsetup:registerProfile

@@ -3,7 +3,7 @@ Introduction
 
 Integration of supersized in Plone4(tested) and Plone3 (untested).
 
-This version include supersized v3.2.7
+This version include supersized v3.2.4 (warning, the 3.2.7 did not work)
 It was made for using it with collective.plonetruegallery
 For plonetruegallyey you only need to add collective.js.supersized to your buildout, you do not need to install it.
 

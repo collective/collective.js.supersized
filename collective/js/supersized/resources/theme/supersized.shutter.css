@@ -22,7 +22,7 @@
 				#play-button{ float:left; margin-top:1px;border-right:1px solid #333; background:url('++resource++supersized/bg-hover.png') repeat-x 0 44px; }
 					#play-button:hover{ background-position:0 1px; cursor:pointer; }
 				
-				#prevslide, #nextslide{ position:absolute; height:43px; width:43px; top:50%; margin-top:-21px; opacity:0.6; }
+				#prevslide, #nextslide{ position:fixed; height:43px; width:43px; top:50%; margin-top:-21px; opacity:0.6; }
 					#prevslide{ left:10px; background:url('++resource++supersized/back.png'); }
 					#nextslide{ right:10px; background:url('++resource++supersized/forward.png'); }
 						#prevslide:active, #nextslide:active{ margin-top:-19px; }

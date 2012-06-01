@@ -1,7 +1,12 @@
 Changelog
 =========
 
-0.2.1 (2012-05-22)
+0.2.3 (2012-06-01)
+------------------
+
+- Changed image path in supersized.shutter.js
+
+0.2.2 (2012-06-01)
 ------------------
 
 - Changes in css to make it work with the other transitions

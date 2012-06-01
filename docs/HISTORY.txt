@@ -4,6 +4,11 @@ Changelog
 0.2.1 (2012-05-22)
 ------------------
 
+- Changes in css to make it work with the other transitions
+
+0.2.1 (2012-05-22)
+------------------
+
 - Switched to supersized 3.2.4 because the 3.2.7 version is not working.
 
 0.2 (2012-05-22)

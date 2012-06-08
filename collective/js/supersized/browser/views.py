@@ -14,6 +14,10 @@ class SupersizedView(BrowserView):
 
     def javascript(self):
         return u"""
+<script type="text/javascript"
+    src="++resource++supersized.min.js"></script>
+<script type="text/javascript"
+    src="++resource++supersized.shutter.min.js"></script>
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
     $.supersized({
@@ -38,10 +42,12 @@ $(document).ready(function(){
 });
 </script>
 """ % {
-         'image' : self.context.absolute_url(),  
+        'image' : self.context.absolute_url(),
     }
 
 
     def css(self):
         return u"""
+<link rel="stylesheet" type="text/css" href="++resource++supersized.css"/>
+<link rel="stylesheet" type="text/css" href="++resource++supersized.shutter.css"/>
 """ 

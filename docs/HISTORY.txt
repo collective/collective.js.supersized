@@ -1,6 +1,9 @@
 Changelog
 =========
 
+0.2.8 (2012-06-08)
+------------------
+- Added css and js to the @@supersized_view so one does not have to install the product to use that part (same way as it is done by collective.plonetruegallery).
 
 0.2.7 (2012-06-05)
 ------------------

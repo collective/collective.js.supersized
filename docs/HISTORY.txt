@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.2.9 (2012-06-12)
+------------------
+- Changed default setting for portrait images to exceed browser height
+
 0.2.8 (2012-06-08)
 ------------------
 - Added css and js to the @@supersized_view so one does not have to install the product to use that part (same way as it is done by collective.plonetruegallery).

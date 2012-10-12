@@ -19,10 +19,32 @@ class SupersizedView(BrowserView):
         
     def javascript(self):
         return u"""
+<script type="text/javascript"
+    src="%(portal_url)s/++resource++ptg.supersized/js/supersized.min.js">
+</script>
+<script type="text/javascript"
+src="%(portal_url)s/++resource++ptg.supersized/theme/supersized.shutter.min.js">
+</script>
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
     $.supersized({
-       
+        // Size & Position						   
+        min_width		        :   %(min_width)i,			// Min width allowed (in pixels)
+        min_height		        :   %(min_height)i,			// Min height allowed (in pixels)
+        vertical_center         :   %(vertical_center)i,	// Vertically center background
+        horizontal_center       :   %(horizontal_center)i,	// Horizontally center background
+        fit_always				:	$%(fit_always)i,		// Image will never exceed browser width or height (Ignores min. dimensions)
+        fit_portrait         	:   %(fit_portrait)i,		// Portrait images will not exceed browser height
+        fit_landscape			:   %(fit_landscape)i,		// Landscape images will not exceed browser width
+                                                   
+        // Components							
+        slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+        thumb_links				:	1,			// Individual thumb links for each slide
+        slides 					:  	[{image : '%(image)s/image'},
+                                    ],
+                                    
+        // Theme Options			   
+        mouse_scrub				:	0,
     });
 });
 </script>

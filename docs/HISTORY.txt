@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.3.2 (2012-10-10)
+------------------
+- Removed unused settings and fixed view.py so that properties load correctly.
+
+
 0.3 (2012-10-10)
 ------------------
 - Removed loading of css an js files from template (they are in the registres)

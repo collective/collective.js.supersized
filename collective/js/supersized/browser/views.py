@@ -11,11 +11,14 @@ class SupersizedView(BrowserView):
     A browser view to be used on news items. It will show the news image as background image as background
     """
     template = ViewPageTemplateFile('supersized.pt')
+    
+    def __init__(self, context, request):
+        self.portal = self.portal
 
     @property
     def supersized_properties(self):
-        propertiestool = getToolByName(self.portal, 'portal_properties')
-        supersized_properties = getattr(propertiestool, 'supersized_properties', None)
+        propertiestool = getToolByName(self 'portal_properties')
+        supersized_properties = propertiestool['supersized_properties']
         
     def javascript(self):
         return u"""
@@ -44,11 +47,11 @@ $(document).ready(function(){
 </script>
 """ % {
         'image' : self.context.absolute_url(),
-        'min_width'	:       getattr(self.supersized_properties, 'min_width', 0),
-        'min_height' :      getattr(self.supersized_properties, 'min_height', 0),
-        'vertical_center' : getattr(self.supersized_properties, 'vertical_center', 1),
-        'horizontal_center' : getattr(self.supersized_properties, 'horizontal_center', 1),
-        'fit_always' :      getattr(self.supersized_properties, 'fit_always', 0),
-        'fit_portrait' :    getattr(self.supersized_properties, 'fit_portrait', 0),
-        'fit_landscape'	:   getattr(self.supersized_properties, 'fit_landscape', 0),
+        'min_width'	:       self.supersized_properties.getProperty(min_width),
+        'min_height' :      self.supersized_properties.getProperty(min_height),
+        'vertical_center' : self.supersized_properties.getProperty(vertical_center),
+        'horizontal_center':self.supersized_properties.getProperty(horizontal_center),
+        'fit_always' :      self.supersized_properties.getProperty(fit_always),
+        'fit_portrait' :    self.supersized_properties.getProperty(fit_portrait),
+        'fit_landscape'	:   self.supersized_properties.getProperty(fit_landscape),
     }

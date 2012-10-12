@@ -6,9 +6,6 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
 
-<metal:css fill-slot="style_slot">
-    <tal:replace tal:replace="structure view/css" />
-</metal:css>
 <metal:js fill-slot="javascript_head_slot">
     <tal:replace tal:replace="structure view/javascript" />
 </metal:js>

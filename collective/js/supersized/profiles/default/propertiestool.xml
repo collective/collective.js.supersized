@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+ <object name="maps_properties" meta_type="Plone Property Sheet">
+  <property name="title">Supersized Properties</property>
+  <property name="min_width" type="int">0</property>
+  <property name="min_height" type="int">0</property>
+  <property name="vertical_center" type="int">1</property>
+  <property name="horizontal_center" type="int">1</property>
+  <property name="fit_always" type="int">0</property>
+  <property name="fit_portrait" type="int">0</property>
+  <property name="fit_landscape" type="int">0</property>
+  <property name="thumb_links" type="int">1</property>
+  <property name="mouse_scrub" type="int">0</property>
+ </object>
+</object>

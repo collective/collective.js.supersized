@@ -25,7 +25,6 @@
            class="discreet">
             This item does not have any body text, click the edit tab to change it.
         </p>
-
         <div metal:define-macro="text-field-view"
              id="parent-fieldname-text" class="stx"
              tal:define="kss_class python:getKssClasses('text', 

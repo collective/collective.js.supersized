@@ -14,7 +14,7 @@ class SupersizedView(BrowserView):
 
     @property
     def supersized_properties(self):
-        propertiestool = getToolByName(self, 'portal_properties')
+        propertiestool = getToolByName(self.portal, 'portal_properties')
         supersized_properties = getattr(propertiestool, 'supersized_properties', None)
         
     def javascript(self):

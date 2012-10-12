@@ -5,6 +5,7 @@ Changelog
 ------------------
 - Removed loading of css an js files from template (they are in the registres)
 - Removed the loader icon
+- Added the supersized view to news items
 
 0.2.9 (2012-06-12)
 ------------------

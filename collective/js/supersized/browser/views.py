@@ -13,12 +13,12 @@ class SupersizedView(BrowserView):
     """
     template = ViewPageTemplateFile('supersized.pt')
 
-    def __init__(self, context):
+    def __init__(self, context, request):
         """ init view """
         self.context = context
-        propertiestool = getToolByName(self.portal, 'portal_properties')
+        propertiestool = getToolByName(self, 'portal_properties')
         supersized_properties = getattr(propertiestool, 'supersized_properties', None)
-    
+        
     def javascript(self):
         return u"""
 <script type="text/javascript" charset="utf-8">
@@ -46,15 +46,15 @@ $(document).ready(function(){
 </script>
 """ % {
         'image' : self.context.absolute_url(),
-        'min_width'	: getattr(self.prettyphoto_properties, 'min_width', 0),
-        'min_height' : getattr(self.prettyphoto_properties, 'min_height', 0),
-        'vertical_center' : getattr(self.prettyphoto_properties, 'vertical_center', 1),
-        'horizontal_center' : getattr(self.prettyphoto_properties, 'horizontal_center', 1),
-        'fit_always' : getattr(self.prettyphoto_properties, 'fit_always', 0),
-        'fit_portrait' : getattr(self.prettyphoto_properties, 'fit_portrait', 0),
-        'fit_landscape'	: getattr(self.prettyphoto_properties, 'fit_landscape', 0),
-        'thumb_links' : getattr(self.prettyphoto_properties, 'thumb_lins', 1),
-        'mouse_scrub' : getattr(self.prettyphoto_properties, 'mouse_scrub', 0),
+        'min_width'	: getattr(supersized_properties, 'min_width', 0),
+        'min_height' : getattr(supersized_properties, 'min_height', 0),
+        'vertical_center' : getattr(supersized_properties, 'vertical_center', 1),
+        'horizontal_center' : getattr(supersized_properties, 'horizontal_center', 1),
+        'fit_always' : getattr(supersized_properties, 'fit_always', 0),
+        'fit_portrait' : getattr(supersized_properties, 'fit_portrait', 0),
+        'fit_landscape'	: getattr(supersized_properties, 'fit_landscape', 0),
+        'thumb_links' : getattr(supersized_properties, 'thumb_lins', 1),
+        'mouse_scrub' : getattr(supersized_properties, 'mouse_scrub', 0),
     }
 
     def css(self):

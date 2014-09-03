@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.3.3 (unreleased)
+-------------------
+- Updated package dependency for ViewPageTemplateFile import in view.py file. [macagua]
+- Added more strings classifiers items for this packages [macagua]
+
 0.3.2 (2012-10-10)
 ------------------
 - Removed unused settings and fixed view.py so that properties load correctly.

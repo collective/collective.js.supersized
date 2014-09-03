@@ -1,5 +1,10 @@
 from Products.Five.browser import BrowserView
-from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
+try:
+    # Plone < 4.3
+    from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
+except ImportError:
+    # Plone >= 4.3
+    from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 from zope.interface import implements, Interface
 from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName

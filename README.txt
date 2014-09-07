@@ -9,7 +9,7 @@ This product is no longer used for truegallery, use collective.ptg.supersized in
 
 You can see the "single background image mode" by 
 - installing the product
-- go to http://mysite/mynewsitemvithimage/@@supersized_view
+- go to http://mysite/mynewsitemwithimage/@@supersized_view
 
 
 Authors

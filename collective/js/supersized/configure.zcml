@@ -8,8 +8,8 @@
     i18n_domain="collective.js.supersized">
 
 <!-- Include the sub-packages that use their own configure.zcml files. -->
+  <include file="behaviors.zcml" />
   <include package=".browser" />
-
 
   <browser:resource
     name="supersized.min.js"

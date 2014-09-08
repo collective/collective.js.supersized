@@ -1,0 +1,2 @@
+  <script type="text/javascript" tal:content="structure view/javascript">
+  </script>

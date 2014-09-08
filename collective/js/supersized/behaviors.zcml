@@ -7,7 +7,7 @@
 
    <plone:behavior
         title="JS Supersized behaviour"
-        description="enables supersized background image"
+        description="enables supersized background image for image field"
         provides=".behavior.ISupersizedLayer"
         for="plone.dexterity.interfaces.IDexterityContent"
         />

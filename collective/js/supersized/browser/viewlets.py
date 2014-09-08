@@ -31,7 +31,7 @@ $(document).ready(function(){
         // Components							
         slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
         thumb_links				:	1,			// Individual thumb links for each slide
-        slides 					:  	[{image : '%(image)s/image'},
+        slides 					:  	[{image : 'http://localhost:8080/cccc/logo.png'},
                                     ],
                                     
         // Theme Options			   

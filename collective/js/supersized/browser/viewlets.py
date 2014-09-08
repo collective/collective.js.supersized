@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from plone.app.layout.viewlets import ViewletBase
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from Products.CMFCore.utils import getToolByName
 
 
-
 class SupersizedViewlet(ViewletBase):
     """ A viewlet which renders the background image """
+    
+    render = ViewPageTemplateFile('viewlet.pt')
 
     def javascript(self):
         propertiestool = getToolByName(self, 'portal_properties')

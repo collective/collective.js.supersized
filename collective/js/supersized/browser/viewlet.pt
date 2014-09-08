@@ -1,2 +1,2 @@
-  <script type="text/javascript" tal:content="structure view/javascript">
+  <script type="text/javascript" tal:replace="structure view/javascript">
   </script>

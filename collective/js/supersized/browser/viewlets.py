@@ -14,7 +14,6 @@ class SupersizedViewlet(ViewletBase):
     def javascript(self):
         propertiestool = getToolByName(self, 'portal_properties')
         supersized_properties = propertiestool['supersized_properties']
-        
         return u"""
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
@@ -31,7 +30,7 @@ $(document).ready(function(){
         // Components							
         slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
         thumb_links				:	1,			// Individual thumb links for each slide
-        slides 					:  	[{image : 'http://localhost:8080/cccc/logo.png'},
+        slides 					:  	[{image : '%(image)s'},
                                     ],
                                     
         // Theme Options			   
@@ -40,7 +39,7 @@ $(document).ready(function(){
 });
 </script>
 """ % {
-        'image' : self.context.absolute_url(),
+        'image' : self.context.absolute_url() + '/@@images/image/large',
         'min_width'	:       supersized_properties.min_width,
         'min_height' :      supersized_properties.min_height,
         'vertical_center' : supersized_properties.vertical_center,

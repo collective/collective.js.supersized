@@ -1,0 +1,6 @@
+<layers>
+    <layer name="collective.supersizedlayer"
+    interface="collective.js.supersized.behavior.ISupersizedLayer" />
+</layers>
+
+

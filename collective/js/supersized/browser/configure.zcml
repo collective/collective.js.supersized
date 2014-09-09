@@ -15,7 +15,7 @@
 
     <browser:viewlet
       name="collective.supersizedviewlet"
-      layer="..behavior.ISupersizedLayer"
+      for="..behavior.ISupersizedLayer"
       manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
       class=".viewlets.SupersizedViewlet"
       template="viewlet.pt" 

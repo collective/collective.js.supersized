@@ -14,7 +14,9 @@ class SupersizedViewlet(ViewletBase):
     def javascript(self):
         propertiestool = getToolByName(self, 'portal_properties')
         supersized_properties = propertiestool['supersized_properties']
-        return u"""
+
+        if self.context.image:
+            return u"""
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
     $.supersized({
@@ -39,7 +41,7 @@ $(document).ready(function(){
 });
 </script>
 """ % {
-        'image' : self.context.absolute_url() + '/@@images/image/large',
+        'image' : self.context.absolute_url() + '/@@images/image', 
         'min_width'	:       supersized_properties.min_width,
         'min_height' :      supersized_properties.min_height,
         'vertical_center' : supersized_properties.vertical_center,
@@ -48,3 +50,5 @@ $(document).ready(function(){
         'fit_portrait' :    supersized_properties.fit_portrait,
         'fit_landscape'	:   supersized_properties.fit_landscape,
     }
+    
+        return ""

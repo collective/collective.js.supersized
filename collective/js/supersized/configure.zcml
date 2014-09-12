@@ -53,5 +53,9 @@
       description='Install collective.js.supersized in Plone'
       provides="Products.GenericSetup.interfaces.EXTENSION"
   />
+  
+  <utility
+    component=".vocabulary.ImageSizeVocabulary"
+    name="collective.js.supersized.ImageSizeVocabulary" />
 
 </configure>

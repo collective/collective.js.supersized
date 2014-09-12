@@ -26,6 +26,7 @@ class ISupersizedSettings(form.Schema):
               'fit_always',
               'fit_portrait',
               'fit_landscape',
+              'imagesize',
             ],
     )
 
@@ -77,6 +78,13 @@ class ISupersizedSettings(form.Schema):
             default=u"fit_landscape"),
         description=_(u"help_fit_landscape",
             default="Should the landscape images fit")
+    )
+    
+    imagesize = schema.Choice(
+        title = _("label_imagesize", default=u"Size for image"),
+        description = _("help_imagesize",
+                      default="Choose Size"),
+        vocabulary='collective.js.supersized.ImageSizeVocabulary',
     )
      
                 

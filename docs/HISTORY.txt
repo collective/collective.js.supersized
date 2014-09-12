@@ -5,6 +5,7 @@ Changelog
 -------------------
 - Added supersized behavior [espen]
 - Added (medialog) controlpanel [espen]
+- Added option to set image size in the controlpanel [espen]
 
 
 0.3.3 (2014-09-07)

@@ -18,6 +18,11 @@ class SupersizedView(BrowserView):
     template = ViewPageTemplateFile('supersized.pt')
          
     def javascript(self):
+        image_url = self.context.absolute_url() + '/@@images/image'
+        size = api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.imagesize')
+        if size != 'original':
+            image_url += '/'
+            image_url += size
     
         return u"""
 <script type="text/javascript" charset="utf-8">
@@ -35,7 +40,7 @@ $(document).ready(function(){
         // Components							
         slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
         thumb_links				:	1,			// Individual thumb links for each slide
-        slides 					:  	[{image : '%(image)s/image'},
+        slides 					:  	[{image : '%(image)s'},
                                     ],
                                     
         // Theme Options			   
@@ -44,7 +49,7 @@ $(document).ready(function(){
 });
 </script>
 """ % {
-        'image' : self.context.absolute_url(), 
+        'image' : image_url, 
         'min_width'	:       api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.min_width'),
         'min_height' :      api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.min_height'),
         'vertical_center' : api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.vertical_center'),

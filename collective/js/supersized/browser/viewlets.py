@@ -2,9 +2,9 @@
 
 from plone.app.layout.viewlets import ViewletBase
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
-from Products.CMFCore.utils import getToolByName
-
+#from Products.CMFCore.utils import getToolByName
+from plone import api
+from collective.js.supersized.interfaces import ISupersizedSettings
 
 class SupersizedViewlet(ViewletBase):
     """ A viewlet which renders the background image """
@@ -12,10 +12,8 @@ class SupersizedViewlet(ViewletBase):
     render = ViewPageTemplateFile('viewlet.pt')
 
     def javascript(self):
-        propertiestool = getToolByName(self, 'portal_properties')
-        supersized_properties = propertiestool['supersized_properties']
-
         if self.context.image:
+        
             return u"""
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
@@ -42,13 +40,13 @@ $(document).ready(function(){
 </script>
 """ % {
         'image' : self.context.absolute_url() + '/@@images/image', 
-        'min_width'	:       supersized_properties.min_width,
-        'min_height' :      supersized_properties.min_height,
-        'vertical_center' : supersized_properties.vertical_center,
-        'horizontal_center':supersized_properties.horizontal_center,
-        'fit_always' :      supersized_properties.fit_always,
-        'fit_portrait' :    supersized_properties.fit_portrait,
-        'fit_landscape'	:   supersized_properties.fit_landscape,
+        'min_width' :       api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.min_width'),
+        'min_height' :      api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.min_height'),
+        'vertical_center' : api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.vertical_center'),
+        'horizontal_center':api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.horizontal_center'),
+        'fit_always' :      api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_always'),
+        'fit_portrait' :    api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_portrait'),
+        'fit_landscape' :   api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_landscape') 
     }
     
         return ""

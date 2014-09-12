@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.3.3'
+version = '0.4'
 
 setup(name='collective.js.supersized',
       version=version,
@@ -37,7 +37,8 @@ setup(name='collective.js.supersized',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools',
+          'medialog.controlpanel',
+          'plone.api',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

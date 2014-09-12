@@ -3,15 +3,11 @@
 
  <stylesheet title=""
     id="++resource++supersized.css"
-    media="screen" rel="stylesheet" rendering="import"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="1" expression=""/>
+    remove="True"/>
 
  <stylesheet title=""
     id="++resource++supersized.shutter.css"
-    media="screen" rel="stylesheet" rendering="import"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="1" expression=""/>
+    remove="True"/>
         
 
 </object>

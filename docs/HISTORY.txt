@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.4 (unreleased)
+-------------------
+- Added supersized behavior [espen]
+- Added (medialog) controlpanel [espen]
+
+
 0.3.3 (2014-09-07)
 -------------------
 - Updated package dependency for ViewPageTemplateFile import in view.py file. [macagua]

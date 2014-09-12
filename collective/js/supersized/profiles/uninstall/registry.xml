@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<registry remove="True">
+  
+  <records interface="collective.js.supersized.interfaces.ISupersizedSettings" 
+           remove="True" />
+
+</registry>

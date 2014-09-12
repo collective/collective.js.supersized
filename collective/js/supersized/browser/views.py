@@ -6,10 +6,10 @@ except ImportError:
     # Plone >= 4.3
     from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 from zope.interface import implements, Interface
-from Products.Five import BrowserView
-from Products.CMFCore.utils import getToolByName
-#from zope.component import getMultiAdapter
 
+from Products.Five import BrowserView
+from plone import api
+from collective.js.supersized.interfaces import ISupersizedSettings
 
 class SupersizedView(BrowserView):
     """
@@ -18,9 +18,7 @@ class SupersizedView(BrowserView):
     template = ViewPageTemplateFile('supersized.pt')
          
     def javascript(self):
-        propertiestool = getToolByName(self, 'portal_properties')
-        supersized_properties = propertiestool['supersized_properties']
-        
+    
         return u"""
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
@@ -46,12 +44,12 @@ $(document).ready(function(){
 });
 </script>
 """ % {
-        'image' : self.context.absolute_url(),
-        'min_width'	:       supersized_properties.min_width,
-        'min_height' :      supersized_properties.min_height,
-        'vertical_center' : supersized_properties.vertical_center,
-        'horizontal_center':supersized_properties.horizontal_center,
-        'fit_always' :      supersized_properties.fit_always,
-        'fit_portrait' :    supersized_properties.fit_portrait,
-        'fit_landscape'	:   supersized_properties.fit_landscape,
+        'image' : self.context.absolute_url(), 
+        'min_width'	:       api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.min_width'),
+        'min_height' :      api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.min_height'),
+        'vertical_center' : api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.vertical_center'),
+        'horizontal_center':api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.horizontal_center'),
+        'fit_always' :      api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_always'),
+        'fit_portrait' :    api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_portrait'),
+        'fit_landscape'	:   api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_landscape') 
     }

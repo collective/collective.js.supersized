@@ -3,8 +3,6 @@
 
  <javascript 
     id="++resource++supersized.min.js"
-    cacheable="True" compression="safe" cookable="False"
-    enabled="True" expression=""  inline="False" conditionalcomment=""
     remove="True"
     />
 

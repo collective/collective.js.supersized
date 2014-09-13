@@ -22,3 +22,6 @@ Contributors
 ============
 
 .. _supersized: http://buildinternet.com/project/supersized
+
+macagua
+

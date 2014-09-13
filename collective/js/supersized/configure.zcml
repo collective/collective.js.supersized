@@ -10,7 +10,7 @@
 <!-- Include the sub-packages that use their own configure.zcml files. -->
   <include file="behaviors.zcml" />
   <include package=".browser" />
-
+  
   <browser:resource
     name="supersized.min.js"
     file="resources/js/supersized.min.js"
@@ -53,6 +53,23 @@
       description='Install collective.js.supersized in Plone'
       provides="Products.GenericSetup.interfaces.EXTENSION"
   />
+    
+  <genericsetup:registerProfile
+      name="to_10"
+      title="collective.js.supersized Upgrade to 10"
+      directory="profiles/to_10"
+      description='Install collective.js.supersized in Plone'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+  />
+        
+    <genericsetup:upgradeStep
+      source="*"
+      destination="10"
+      title="Upgrade collective.js.supersized"
+      description="installs behavior etc"
+      profile="collective.js.supersized:default"
+      handler=".upgrades.to_10"
+      />
   
   <utility
     component=".vocabulary.ImageSizeVocabulary"

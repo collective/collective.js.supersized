@@ -6,7 +6,7 @@ Changelog
 - Added supersized behavior [espen]
 - Added (medialog) controlpanel [espen]
 - Added option to set image size in the controlpanel [espen]
-
+- Added upgrade profile, but it is not working properly (uninstall and install the product) [espen]
 
 0.3.3 (2014-09-07)
 -------------------

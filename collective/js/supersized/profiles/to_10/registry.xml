@@ -10,7 +10,7 @@
       <value key="fit_always" >False</value>
       <value key="fit_portrait">False</value>
       <value key="fit_landscape">False</value>
-      <value key="imagesize">large</value>
+      <value key="imagesize"></value>
   </records>
 
 </registry>

@@ -7,6 +7,8 @@
       i18n:domain="plone">
 
 <metal:js fill-slot="javascript_head_slot">
+  <script type="text/javascript"
+    src="++resource++supersized.min.js"></script>
     <tal:replace tal:replace="structure view/javascript" />
 </metal:js>
       

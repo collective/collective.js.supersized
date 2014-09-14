@@ -28,6 +28,13 @@ Example on Using it on folders
 - Add a «Myfoldertype» to your site
 - Add a «mytype» in «Myfoldertype» and you will get the image from «Myfoldertype» supersized 
 
+
+Gallery effect
+==============
+If you add more than one image to your content type, you will get a slideshow effect.
+It will only work for images on the same content, not its parent
+
+
 The control panel
 =================
 In the (medialog) control panel, you can choose which size to use for the background image and a few other settings..

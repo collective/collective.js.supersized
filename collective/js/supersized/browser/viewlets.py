@@ -6,19 +6,40 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 from collective.js.supersized.interfaces import ISupersizedSettings
 
+from plone.dexterity.utils import iterSchemata
+from zope.schema import getFields
+from plone.dexterity.interfaces import IDexterityContent
+
 class SupersizedViewlet(ViewletBase):
     """ A viewlet which renders the background image """
     
     render = ViewPageTemplateFile('viewlet.pt')
-
+    
+    @property
+    def imagefields(self):
+        size = api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.imagesize')
+        image_url_end = ''
+        if size != 'original':
+            image_url_end += '/'
+            image_url_end += size
+        
+        image_fields = []
+        context=self.context
+        if IDexterityContent.providedBy(context):
+            for schemata in iterSchemata(context):
+                for name, field in getFields(schemata).items():
+                    #checking for image field
+                    if str(field.__class__) == "<class 'plone.namedfile.field.NamedBlobImage'>":
+                        image = {'image': (self.context.absolute_url() + '/@@images/' + name + image_url_end) }
+                        image_fields.append(image)
+            if image_fields != []: 
+                return image_fields
+            return [{'image' : (self.context.absolute_url() + '/@@images/image/' + image_url_end) }]
+        
     def javascript(self):
         if self.context.image:
-            image_url = self.context.absolute_url() + '/@@images/image'
-            size = api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.imagesize')
-            if size != 'original':
-                image_url += '/'
-                image_url += size
-        
+            images = self.imagefields
+            
             return u"""
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
@@ -35,8 +56,7 @@ $(document).ready(function(){
         // Components                           
         slide_links             :   'blank',    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
         thumb_links             :   1,          // Individual thumb links for each slide
-        slides                  :   [{image : '%(image)s'},
-                                    ],
+        slides                  :   %(images)s,
                                     
         // Theme Options               
         mouse_scrub             :   0
@@ -44,7 +64,7 @@ $(document).ready(function(){
 });
 </script>
 """ % {
-        'image' : image_url, 
+        'images' : images, 
         'min_width' :       api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.min_width'),
         'min_height' :      api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.min_height'),
         'vertical_center' : api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.vertical_center'),

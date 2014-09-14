@@ -3,3 +3,4 @@
  
   <script type="text/javascript" tal:replace="structure view/javascript">
   </script>
+  

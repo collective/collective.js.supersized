@@ -29,7 +29,9 @@ class SupersizedViewlet(ViewletBase):
             for schemata in iterSchemata(context):
                 for name, field in getFields(schemata).items():
                     #checking for image field
+                    #will error if image is not set
                     if str(field.__class__) == "<class 'plone.namedfile.field.NamedBlobImage'>":
+                        #if field.size:
                         image = {'image': (self.context.absolute_url() + '/@@images/' + name + image_url_end) }
                         image_fields.append(image)
             if image_fields != []: 

@@ -27,16 +27,16 @@ class SupersizedViewlet(ViewletBase):
         context=self.context
         if IDexterityContent.providedBy(context):
             for schemata in iterSchemata(context):
-                for name, field in getFields(schemata).items():
+                for name in getFields(schemata).items():
                     #checking for image field
-                    #will error if image is not set
-                    if str(field.__class__) == "<class 'plone.namedfile.field.NamedBlobImage'>":
-                        #if field.size:
-                        image = {'image': (self.context.absolute_url() + '/@@images/' + name + image_url_end) }
-                        image_fields.append(image)
+                    #...must be a better way to do this
+                    filetype = str(context.__dict__.get(name).__class__)
+                    if 'NamedBlobImage' in filetype:
+                        image = {'image': str(self.context.absolute_url() + '/@@images/' + name + image_url_end) }
+                        image_fields.append(image)  
             if image_fields != []: 
                 return image_fields
-            return [{'image' : (self.context.absolute_url() + '/@@images/image/' + image_url_end) }]
+            return [{'image' : str(self.context.absolute_url() + '/@@images/image/' + image_url_end) }]
         
     def javascript(self):
         if self.context.image:
@@ -51,7 +51,7 @@ $(document).ready(function(){
         min_height              :   %(min_height)i,         // Min height allowed (in pixels)
         vertical_center         :   %(vertical_center)i,    // Vertically center background
         horizontal_center       :   %(horizontal_center)i,  // Horizontally center background
-        fit_always              :   %(fit_always)i,     // Image will never exceed browser width or height (Ignores min. dimensions)
+        fit_always              :   %(fit_always)i,     	// Image will never exceed browser width or height (Ignores min. dimensions)
         fit_portrait            :   %(fit_portrait)i,       // Portrait images will not exceed browser height
         fit_landscape           :   %(fit_landscape)i,      // Landscape images will not exceed browser width
                                                    

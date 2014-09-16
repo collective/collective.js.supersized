@@ -1,7 +1,12 @@
 Changelog
 =========
 
-0.4 (unreleased)
+0.4.1 (2114.09.16)
+-------------------
+- Added slideshow it dexterity content type has more than one image [espen]
+
+
+0.4 (2114.09.16)
 -------------------
 - Added supersized behavior [espen]
 - Added (medialog) controlpanel [espen]

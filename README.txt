@@ -16,9 +16,10 @@ You can see the "single background image mode" by
 
 Dexterity behavior
 ==================
-Version 0.4 adds a dexterity behavior.
-- Add a field «image» to your content type… or
+Version 0.4 added a dexterity behavior.
+- Add one or more imagefields to your content type… or
 - Add lead image behavior to your content type
+- If you add several image fields, you will get a slideshow
 
 
 Example on Using it on folders

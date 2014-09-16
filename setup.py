@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.4'
+version = '0.4.1'
 
 setup(name='collective.js.supersized',
       version=version,
-      description="JQuery Supersized plugin as browser resource",
+      description="JQuery Supersized for Plone",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from

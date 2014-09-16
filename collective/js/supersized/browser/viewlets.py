@@ -27,22 +27,24 @@ class SupersizedViewlet(ViewletBase):
         context=self.context
         if IDexterityContent.providedBy(context):
             for schemata in iterSchemata(context):
-                for name in getFields(schemata).items():
+                for field, name in getFields(schemata).items():
                     #checking for image field
                     #...must be a better way to do this
                     filetype = str(context.__dict__.get(name).__class__)
+                    import pdb; pdb.set_trace()
+                    
+                    print filetype
                     if 'NamedBlobImage' in filetype:
                         image = {'image': str(self.context.absolute_url() + '/@@images/' + name + image_url_end) }
                         image_fields.append(image)  
             if image_fields != []: 
                 return image_fields
-            return [{'image' : str(self.context.absolute_url() + '/@@images/image/' + image_url_end) }]
+            return [{'image' : str(self.context.absolute_url() + '/@@images/image' + image_url_end) }]
         
     def javascript(self):
-        if self.context.image:
-            images = self.imagefields
+        images = self.imagefields
             
-            return u"""
+        return u"""
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
     $.supersized({

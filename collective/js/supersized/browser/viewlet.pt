@@ -1,6 +1,8 @@
   <script type="text/javascript"
     src="++resource++supersized.min.js"></script>
- 
+   <script type="text/javascript"
+    src="++resource++supersized.shutter.min.js"></script>
+    
   <script type="text/javascript" tal:replace="structure view/javascript">
   </script>
   	

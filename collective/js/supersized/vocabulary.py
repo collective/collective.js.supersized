@@ -32,5 +32,28 @@ def ImageSizeVocabulary(context):
         ])  
       
     return SimpleVocabulary(terms)
-
+    
 directlyProvides(ImageSizeVocabulary, IVocabularyFactory)
+    
+def TransitionVocabulary(context):
+    return SimpleVocabulary([
+            SimpleTerm(0, 0,
+                _(u"label_transition0", default=u"None")),
+            SimpleTerm(1, 1,
+                _(u"label_transition1", default=u"Fade")),
+            SimpleTerm(2, 2,
+                _(u"label_transition2", default=u"Slide Top")),
+            SimpleTerm(3, 3,
+                _(u"label_transition3", default=u"Slide Right")),
+            SimpleTerm(4, 4,
+                _(u"label_transition4", default=u"Slide Bottom")),
+            SimpleTerm(5, 5,
+                _(u"label_transition5", default=u"Slide Left")),
+            SimpleTerm(6, 6,
+                _(u"label_transition6", default=u"Carousel Right")),
+            SimpleTerm(7, 7,
+                _(u"label_transition7", default=u"Carousel Left")
+            )
+     ])
+
+directlyProvides(TransitionVocabulary, IVocabularyFactory)

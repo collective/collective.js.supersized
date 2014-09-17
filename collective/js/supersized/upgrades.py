@@ -5,9 +5,9 @@ from plone import api
 
 
  
-def to_10(context):
+def to_11(context):
     "move settings from properties to registry and control panel and install new stuff"
-    context.runAllImportStepsFromProfile('profile-collective.js.supersized:to_10')
+    context.runAllImportStepsFromProfile('profile-collective.js.supersized:to_11')
     
     propertiestool = getToolByName(context, 'portal_properties')
     supersized_properties = propertiestool['supersized_properties']

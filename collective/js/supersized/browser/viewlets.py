@@ -10,6 +10,8 @@ from plone.dexterity.utils import iterSchemata
 from zope.schema import getFields
 from plone.dexterity.interfaces import IDexterityContent
 
+from plone.namedfile.field import NamedBlobImage
+
 class SupersizedViewlet(ViewletBase):
     """ A viewlet which renders the background image """
     
@@ -27,24 +29,23 @@ class SupersizedViewlet(ViewletBase):
         context=self.context
         if IDexterityContent.providedBy(context):
             for schemata in iterSchemata(context):
-                for field, name in getFields(schemata).items():
+                for name, field in getFields(schemata).items():
                     #checking for image field
-                    #...must be a better way to do this
+                    #must be a better way to do this
                     filetype = str(context.__dict__.get(name).__class__)
-                    import pdb; pdb.set_trace()
-                    
-                    print filetype
-                    if 'NamedBlobImage' in filetype:
-                        image = {'image': str(self.context.absolute_url() + '/@@images/' + name + image_url_end) }
-                        image_fields.append(image)  
+                    checkfor = "<class 'plone.namedfile.file.NamedBlobImage'>"
+                    if  filetype == checkfor:
+                        image = {'image': (self.context.absolute_url() + '/@@images/' + name + image_url_end) }
+                        image_fields.append(image)
             if image_fields != []: 
                 return image_fields
-            return [{'image' : str(self.context.absolute_url() + '/@@images/image' + image_url_end) }]
+            return [{'image' : (self.context.absolute_url() + '/@@images/image/' + image_url_end) }]
         
     def javascript(self):
-        images = self.imagefields
+        if self.context.image:
+            images = self.imagefields
             
-        return u"""
+            return u"""
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
     $.supersized({
@@ -53,9 +54,10 @@ $(document).ready(function(){
         min_height              :   %(min_height)i,         // Min height allowed (in pixels)
         vertical_center         :   %(vertical_center)i,    // Vertically center background
         horizontal_center       :   %(horizontal_center)i,  // Horizontally center background
-        fit_always              :   %(fit_always)i,     	// Image will never exceed browser width or height (Ignores min. dimensions)
+        fit_always              :   %(fit_always)i,         // Image will never exceed browser width or height (Ignores min. dimensions)
         fit_portrait            :   %(fit_portrait)i,       // Portrait images will not exceed browser height
         fit_landscape           :   %(fit_landscape)i,      // Landscape images will not exceed browser width
+        transition              :   %(transition)i,         // how images change
                                                    
         // Components                           
         slide_links             :   'blank',    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
@@ -75,7 +77,8 @@ $(document).ready(function(){
         'horizontal_center':api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.horizontal_center'),
         'fit_always' :      api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_always'),
         'fit_portrait' :    api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_portrait'),
-        'fit_landscape' :   api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_landscape') 
+        'fit_landscape' :   api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.fit_landscape'),
+        'transition'    :   api.portal.get_registry_record('collective.js.supersized.interfaces.ISupersizedSettings.transition')
     }
     
         return ""

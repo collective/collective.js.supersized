@@ -55,24 +55,29 @@
   />
     
   <genericsetup:registerProfile
-      name="to_10"
-      title="collective.js.supersized Upgrade to 10"
-      directory="profiles/to_10"
+      name="to_11"
+      title="collective.js.supersized Upgrade to 11"
+      directory="profiles/to_11"
       description='Install collective.js.supersized in Plone'
       provides="Products.GenericSetup.interfaces.EXTENSION"
   />
         
     <genericsetup:upgradeStep
       source="*"
-      destination="10"
+      destination="11"
       title="Upgrade collective.js.supersized"
       description="installs behavior etc"
       profile="collective.js.supersized:default"
-      handler=".upgrades.to_10"
+      handler=".upgrades.to_11"
       />
   
   <utility
     component=".vocabulary.ImageSizeVocabulary"
     name="collective.js.supersized.ImageSizeVocabulary" />
+
+  
+  <utility
+    component=".vocabulary.TransitionVocabulary"
+    name="collective.js.supersized.TransitionVocabulary" />
 
 </configure>

@@ -6,6 +6,7 @@ from plone.directives import form
 from plone.autoform.interfaces import IFormFieldProvider
 from medialog.controlpanel.interfaces import IMedialogControlpanelSettingsProvider
 
+from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 from zope.i18nmessageid import MessageFactory
 
@@ -27,6 +28,7 @@ class ISupersizedSettings(form.Schema):
               'fit_portrait',
               'fit_landscape',
               'imagesize',
+              'transition',
             ],
     )
 
@@ -86,6 +88,12 @@ class ISupersizedSettings(form.Schema):
                       default="Choose Size"),
         vocabulary='collective.js.supersized.ImageSizeVocabulary',
     )
-     
-                
+    
+    transition = schema.Choice(
+        title=_(u"label_transition",
+            default=u"Transition"),
+        default=1,
+        vocabulary='collective.js.supersized.TransitionVocabulary',
+    )
+    
 alsoProvides(ISupersizedSettings, IMedialogControlpanelSettingsProvider)

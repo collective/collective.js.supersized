@@ -35,7 +35,7 @@ class SupersizedViewlet(ViewletBase):
                     filetype = str(context.__dict__.get(name).__class__)
                     checkfor = "<class 'plone.namedfile.file.NamedBlobImage'>"
                     if  filetype == checkfor:
-                        image = {'image': (self.context.absolute_url() + '/@@images/' + name + image_url_end) }
+                        image = {'image': str(self.context.absolute_url() + '/@@images/' + name + image_url_end) }
                         image_fields.append(image)
             if image_fields != []: 
                 return image_fields

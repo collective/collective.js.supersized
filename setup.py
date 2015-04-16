@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.4.3'
+version = '0.4.4'
 
 setup(name='collective.js.supersized',
       version=version,
@@ -10,8 +10,7 @@ setup(name='collective.js.supersized',
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
-      classifiers=[        "Development Status :: 3 - Alpha",
-        "Environment :: Web Environment",
+      classifiers=[    "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: 4.1",
         "Framework :: Plone :: 4.2",
@@ -39,6 +38,7 @@ setup(name='collective.js.supersized',
       install_requires=[
           'medialog.controlpanel',
           'plone.api',
+          'plone.directives.form',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

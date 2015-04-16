@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.4.4 (2015.04.10)
+-------------------
+- Added install requires plone.directives.form [espen]
+
 0.4.3 (2114.09.19)
 -------------------
 - Added manifest file [espen]

@@ -40,7 +40,6 @@ class SupersizedViewlet(ViewletBase):
             if image_fields != []: 
                 return image_fields
             return [{'image' : (self.context.absolute_url() + '/@@images/image/' + image_url_end) }]
-        
     def javascript(self):
         if self.context.image:
             images = self.imagefields

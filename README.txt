@@ -20,7 +20,7 @@ Version 0.4 added a dexterity behavior.
 - Add one or more imagefields to your content type… or
 - Add lead image behavior to your content type
 - If you add several image fields, you will get a slideshow
-
+- There is a separate view for plone.app.contenttypes Newsitem, so you can choose if you want to use the behavior or the view. 
 
 Example on Using it on folders
 ===============================

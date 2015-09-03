@@ -8,9 +8,16 @@
 
   <browser:page 
     name="supersized_view"
-    for="*"
+    for="Products.ATContentTypes.interface.news.IATNewsItem"
     permission="zope2.View"
     template="supersized.pt"
+    class=".views.SupersizedView" />
+
+  <browser:page 
+    name="supersized_view"
+    for="plone.app.contenttypes.interfaces.INewsItem"
+    permission="zope2.View"
+    template="d_supersized.pt"
     class=".views.SupersizedView" />
 
     <browser:viewlet

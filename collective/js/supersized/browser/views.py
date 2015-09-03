@@ -15,7 +15,7 @@ class SupersizedView(BrowserView):
     """
     A browser view to be used on news items. It will show the news image as background image as background
     """
-    template = ViewPageTemplateFile('supersized.pt')
+    #template = ViewPageTemplateFile('supersized.pt')
          
     def javascript(self):
         image_url = self.context.absolute_url() + '/@@images/image'

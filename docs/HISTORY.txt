@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.5 (2015.08.03)
+-------------------
+- Added dexterity news item view [espenmn]
+
+
 0.4.4 (2015.04.10)
 -------------------
 - Added install requires plone.directives.form [espen]

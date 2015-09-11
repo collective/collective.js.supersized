@@ -8,8 +8,15 @@
 
 <metal:js fill-slot="javascript_head_slot">
   <script type="text/javascript"
-    src="++resource++supersized.min.js"></script>
+    src="++resource++supersized.js"></script>
     <tal:replace tal:replace="structure view/javascript" />
+      <script type="text/javascript">
+  	/* Place Supersized Elements
+	----------------------------*/
+	$(document).ready(function() {
+		$('body').append('<div id="supersized-loader"></div><ul id="supersized"></ul>');
+	});   
+  </script>
 </metal:js>
       
 <body>

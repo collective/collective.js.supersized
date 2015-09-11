@@ -17,7 +17,7 @@ def format_size(size):
     return "".join(size).split(' ')[0]
 
 
-def ImageSizeVocabulary(context):
+def ImageSuperSizeVocabulary(context):
     site = getSite()
     #default vocabulary if everything else fails
     sizes = None
@@ -44,7 +44,7 @@ def ImageSizeVocabulary(context):
       
     return SimpleVocabulary(terms)
     
-directlyProvides(ImageSizeVocabulary, IVocabularyFactory)
+directlyProvides(ImageSuperSizeVocabulary, IVocabularyFactory)
     
 def TransitionVocabulary(context):
     return SimpleVocabulary([

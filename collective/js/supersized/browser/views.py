@@ -47,6 +47,10 @@ $(document).ready(function(){
         mouse_scrub				:	0
     });
 });
+
+	$(document).ready(function() {
+		$('P').append('<div id="supersized-loader"></div><ul id="supersized"></ul>');
+	});   
 </script>
 """ % {
         'image' : image_url, 

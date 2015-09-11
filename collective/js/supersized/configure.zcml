@@ -72,8 +72,8 @@
       />
   
   <utility
-    component=".vocabulary.ImageSizeVocabulary"
-    name="collective.js.supersized.ImageSizeVocabulary" />
+    component=".vocabulary.ImageSuperSizeVocabulary"
+    name="collective.js.supersized.ImageSuperSizeVocabulary" />
 
   
   <utility

@@ -1,8 +1,16 @@
   <script type="text/javascript"
-    src="++resource++supersized.min.js"></script>
+    src="++resource++supersized.js"></script>
    <script type="text/javascript"
     src="++resource++supersized.shutter.min.js"></script>
     
-  <script type="text/javascript" tal:replace="structure view/javascript">
+  <script type="text/javascript" tal:replace="structure view/javascript" />
+  <script type="text/javascript">
+  	/* Place Supersized Elements
+	----------------------------*/
+	$(document).ready(function() {
+		$('body').append('<div id="supersized-loader"></div><ul id="supersized"></ul>');
+	});   
+  </script>
+
   </script>
   	

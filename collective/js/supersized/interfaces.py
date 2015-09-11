@@ -86,7 +86,7 @@ class ISupersizedSettings(form.Schema):
         title = _("label_imagesize", default=u"Size for image"),
         description = _("help_imagesize",
                       default="Choose Size"),
-        vocabulary='collective.js.supersized.ImageSizeVocabulary',
+        vocabulary='collective.js.supersized.ImageSuperSizeVocabulary',
     )
     
     transition = schema.Choice(

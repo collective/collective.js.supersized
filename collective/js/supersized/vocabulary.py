@@ -2,6 +2,7 @@ from Products.CMFCore.utils import getToolByName
 from zope.interface import directlyProvides
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.schema.interfaces import IVocabularyFactory
+from plone import api
 
 try:
     from zope.app.component.hooks import getSite

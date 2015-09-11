@@ -92,7 +92,6 @@ class ISupersizedSettings(form.Schema):
     transition = schema.Choice(
         title=_(u"label_transition",
             default=u"Transition"),
-        default=1,
         vocabulary='collective.js.supersized.TransitionVocabulary',
     )
     

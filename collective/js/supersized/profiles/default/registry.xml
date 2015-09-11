@@ -11,7 +11,16 @@
       <value key="fit_portrait">False</value>
       <value key="fit_landscape">False</value>
       <value key="imagesize">large</value>
-      <value key="transition">1</value>
-  </records>
 
+      
+  </records>    
+  <record name="collective.js.supersized.interfaces.ISupersizedSettings.transition" interface="collective.js.supersized.interfaces.ISupersizedSettings" field="transition">
+    <field type="plone.registry.field.Choice">
+      <default>1</default>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="collective.js.supersized" ns0:translate="label_transition">Transition</title>
+      <vocabulary>collective.js.supersized.TransitionVocabulary</vocabulary>
+    </field>
+    <value>1</value>
+  </record>
+  
 </registry>
